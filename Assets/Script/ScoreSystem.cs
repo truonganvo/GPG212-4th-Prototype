@@ -10,6 +10,8 @@ public class ScoreSystem : MonoBehaviour
 
     [SerializeField] MovingCube textScore;
 
+    [SerializeField] AudioSource hellYeah;
+
     private int highScore = 0;
     private int score = 0;
 
@@ -26,6 +28,7 @@ public class ScoreSystem : MonoBehaviour
 
         if (highScore < score)
         {
+            hellYeah.Play();
             PlayerPrefs.SetInt("highscore", score);
         }
     }
